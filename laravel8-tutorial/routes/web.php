@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShowProductaController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,9 @@ Route::get('/test', function () {
 });
 
 // use to ShowProductaController
+// http://127.0.0.1/showproducts
+Route::get('showproducts', ShowProductaController::class);
+
+// use to ProductController
 // http://127.0.0.1/products
-Route::get('products', ShowProductaController::class);
+Route::resource('products', ProductController::class);
