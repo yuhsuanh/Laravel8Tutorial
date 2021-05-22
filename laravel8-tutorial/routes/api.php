@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 // http://127.0.0.1/api/test   -> because it is in api.php file
 Route::get('/test', function() {
-	return 'Hello world';}
+    return 'Hello world';}
 );
+
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
 

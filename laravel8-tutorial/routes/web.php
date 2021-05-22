@@ -21,6 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// use http://127.0.0.1/test to show this return
 Route::get('/test', function () {
 	return 'Goodbye';
 });
