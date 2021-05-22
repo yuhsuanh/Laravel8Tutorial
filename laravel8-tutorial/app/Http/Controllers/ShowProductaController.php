@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShowProductaController extends Controller
 {
@@ -21,6 +22,14 @@ class ShowProductaController extends Controller
         //use response method to response the request
         //first parameter is message
         //second parameter is  HTTP Status Code -> 200 is OK
-        return response('product listing', 200);
+//         return response('product listing', 200);
+
+        //in .env file DB_HOST should be mysql
+        $products = DB::table('products')->get();
+        if ($request->query('id') !== null) {
+            $products = $products->where('id', $request->query('id'));
+        }
+        return response()->json($products);
+
     }
 }
