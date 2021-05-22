@@ -29,7 +29,7 @@ class ShowProductaController extends Controller
         if ($request->query('id') !== null) {
             $products = $products->where('id', $request->query('id'));
         }
-        return response()->json($products);
-
+//        return response()->json($products);
+        return view('show.index', ['products' => $products]);
     }
 }
