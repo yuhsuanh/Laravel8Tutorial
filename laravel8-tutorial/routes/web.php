@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ShowProductaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +23,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';
+
 // use http://127.0.0.1/test to show this return
 Route::get('/test', function () {
 	return 'Goodbye';
 });
 
-require __DIR__.'/auth.php';
+// use to ShowProductaController
+// http://127.0.0.1/products
+Route::get('products', ShowProductaController::class);
