@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        \DB::table('products')->get()->dd();
+        //Get products from DB and show in
+        //dd() function means 'Dump and Die', dump a variable's contents to the browser and prevent the further script execution.
+//        \DB::table('products')->get()->dd();
+
+        //Get products from DB and pass this values to product index view
+        $products = DB::table('products')->get();
+        return view('products.index')
+            ->with('products', $products);
     }
 
     /**
