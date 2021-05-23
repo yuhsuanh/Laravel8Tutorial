@@ -89,7 +89,17 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        //Get all user from DB
+        //$users = DB::table('users')->get()->pluck('name', 'id')->prepend('none')->dd();
+
+        //you can get productType if you need (like create method)
+        //skip...
+
+        //you can get some information by product id (where condition)
+//        $something = DB::table('table_name')->where('product_id', $product->id)->first();
+
+        return view('products.edit')
+            ->with('product', $product);
     }
 
     /**
