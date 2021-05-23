@@ -32,7 +32,16 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        // if product has a field call product type
+        // and it has another table used to save product type
+        // and we want to get product types to show on create page to choose from a dropdown box .
+
+        $users = DB::table('users')->get()->pluck('name', 'id');
+        //$productTypes = DB::table('productTypes')->get()->pluck('number', 'id');
+
+        return view('products.create')
+            ->with('users', $users);
+            //->with('productTypes', $productTypes);
     }
 
     /**
@@ -43,7 +52,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // use to display all request fields
+//        dd($request->all());
+
+        //in this time the created_at field will be null, because we didn't set the value. we will use another to store the fields later
+        $id = DB::table('products')->insertGetId([
+            'name' => $request->input('name'),
+            'code' => $request->input('code'),
+            'description' => $request->input('description'),
+            'stock' => $request->input('stock'),
+            'price' => $request->input('price'),
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
