@@ -29,6 +29,11 @@
                 <td class="actions">
                     <a href="{{route('products.show', ['product' => $product->id])}}" alt="View" title="View">View</a>
                     <a href="{{route('products.edit', ['product' => $product->id])}}" alt="Edit" title="Edit">Edit</a>
+                    <form action="{{route('products.destroy', ['product' => $product->id])}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

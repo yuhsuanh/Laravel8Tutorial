@@ -111,7 +111,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        DB::table('products')
+            ->where('id', $product->id)
+            ->update([
+                'name' => $request->input('name'),
+                'code' => $request->input('code'),
+                'description' => $request->input('description'),
+                'stock' => $request->input('stock'),
+                'price' => $request->input('price'),
+            ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -122,6 +132,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        DB::table('products')
+            ->where('id', $product->id)
+            ->delete();
+
+        return redirect()->route('products.index');
     }
 }
