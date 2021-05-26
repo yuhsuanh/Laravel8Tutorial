@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\ProductType;
 
 class ShowProductaController extends Controller
 {
@@ -25,11 +26,11 @@ class ShowProductaController extends Controller
 //         return response('product listing', 200);
 
         //in .env file DB_HOST should be mysql
-        $products = DB::table('products')->get();
+        $product_types = ProductType::get();
         if ($request->query('id') !== null) {
-            $products = $products->where('id', $request->query('id'));
+            $product_types = $product_types->where('id', $request->query('id'));
         }
 //        return response()->json($products);
-        return view('show.index', ['products' => $products]);
+        return view('show.index', ['product_types' => $product_types]);
     }
 }

@@ -7,21 +7,17 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Code</th>
-            <th>Description</th>
-            <th>Stock</th>
-            <th>Price</th>
+            <th>Create</th>
+            <th>Update</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($products as $product)
+        @foreach($product_types as $type)
             <tr>
-                <td>{{$product->id}}</td>
-                <td>{{$product->name}}</td>
-                <td>{{$product->code}}</td>
-                <td>{{$product->description}}</td>
-                <td>{{$product->stock}}</td>
-                <td>${{$product->price}}</td>
+                <td>{{$type->id}}</td>
+                <td>{{$type->name}}</td>
+                <td>{{$type->created_at}}</td>
+                <td>{{$type->updated_at}}</td>
             </tr>
         @endforeach
     </tbody>
