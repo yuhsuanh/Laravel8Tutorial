@@ -37,11 +37,11 @@ class ProductController extends Controller
         // and we want to get product types to show on create page to choose from a dropdown box .
 
         $users = DB::table('users')->get()->pluck('name', 'id');
-        //$productTypes = DB::table('productTypes')->get()->pluck('number', 'id');
+        $product_types = DB::table('product_types')->get()->pluck('name', 'id');
 
         return view('products.create')
-            ->with('users', $users);
-            //->with('productTypes', $productTypes);
+            ->with('users', $users)
+            ->with('product_types', $product_types);
     }
 
     /**
@@ -60,6 +60,7 @@ class ProductController extends Controller
             'name' => $request->input('name'),
             'code' => $request->input('code'),
             'description' => $request->input('description'),
+            'type_id' =>$request->input('type_id'),
             'stock' => $request->input('stock'),
             'price' => $request->input('price'),
         ]);
@@ -93,13 +94,14 @@ class ProductController extends Controller
         //$users = DB::table('users')->get()->pluck('name', 'id')->prepend('none')->dd();
 
         //you can get productType if you need (like create method)
-        //skip...
+        $product_types = DB::table('product_types')->get()->pluck('name', 'id');
 
         //you can get some information by product id (where condition)
 //        $something = DB::table('table_name')->where('product_id', $product->id)->first();
 
         return view('products.edit')
-            ->with('product', $product);
+            ->with('product', $product)
+            ->with('product_types', $product_types);
     }
 
     /**
@@ -117,6 +119,7 @@ class ProductController extends Controller
                 'name' => $request->input('name'),
                 'code' => $request->input('code'),
                 'description' => $request->input('description'),
+                'type_id' =>$request->input('type_id'),
                 'stock' => $request->input('stock'),
                 'price' => $request->input('price'),
             ]);

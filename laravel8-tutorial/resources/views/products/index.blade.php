@@ -12,8 +12,11 @@
             <th>Name</th>
             <th>Code</th>
             <th>Description</th>
+            <th>Type</th>
             <th>Stock</th>
             <th>Price</th>
+            <th>Create</th>
+            <th>Update</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -24,8 +27,11 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->code}}</td>
                 <td>{{$product->description}}</td>
+                <td>{{$product->type_id}}</td>
                 <td>{{$product->stock}}</td>
-                <td>${{$product->price}}</td>
+                <td>{{$product->price}}</td>
+                <td>{{$product->created_at}}</td>
+                <td>{{$product->updated_at}}</td>
                 <td class="actions">
                     <a href="{{route('products.show', ['product' => $product->id])}}" alt="View" title="View">View</a>
                     <a href="{{route('products.edit', ['product' => $product->id])}}" alt="Edit" title="Edit">Edit</a>
