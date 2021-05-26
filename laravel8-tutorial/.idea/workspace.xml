@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a50eb8ed-b53e-4fb9-b723-10816685f38c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +161,7 @@
       <updated>1621621662439</updated>
       <workItem from="1621621665602" duration="5875000" />
       <workItem from="1621649555411" duration="17009000" />
-      <workItem from="1622057161173" duration="2873000" />
+      <workItem from="1622057161173" duration="3587000" />
     </task>
     <servers />
   </component>
@@ -167,6 +169,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="378" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622060743179">
+      <screen x="0" y="23" width="1280" height="738" />
+    </state>
+    <state x="378" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.738/-1920.-257.1920.1057@0.23.1280.738" timestamp="1622060743179" />
     <state x="305" y="85" width="670" height="676" key="search.everywhere.popup" timestamp="1621632563207">
       <screen x="0" y="23" width="1280" height="738" />
     </state>
