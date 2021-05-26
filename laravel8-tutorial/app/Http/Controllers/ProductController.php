@@ -20,7 +20,8 @@ class ProductController extends Controller
 //        \DB::table('products')->get()->dd();
 
         //Get products from DB and pass this values to product index view
-        $products = DB::table('products')->get();
+        //$products = DB::table('products')->get();
+        $products = Product::paginate(2);
         return view('products.index')
             ->with('products', $products);
     }
