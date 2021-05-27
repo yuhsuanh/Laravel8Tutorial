@@ -57,14 +57,16 @@ class ProductController extends Controller
 //        dd($request->all());
 
         //in this time the created_at field will be null, because we didn't set the value. we will use another to store the fields later
-        $id = DB::table('products')->insertGetId([
-            'name' => $request->input('name'),
-            'code' => $request->input('code'),
-            'description' => $request->input('description'),
-            'type_id' =>$request->input('type_id'),
-            'stock' => $request->input('stock'),
-            'price' => $request->input('price'),
-        ]);
+//        $id = DB::table('products')->insertGetId([
+//            'name' => $request->input('name'),
+//            'code' => $request->input('code'),
+//            'description' => $request->input('description'),
+//            'type_id' =>$request->input('type_id'),
+//            'stock' => $request->input('stock'),
+//            'price' => $request->input('price'),
+//        ]);
+
+        $product = Product::create($request->input());
 
         return redirect()->route('products.index');
     }
