@@ -32,8 +32,8 @@ Route::get('/test', function () {
 });
 
 // use to ShowProductaController
-// http://127.0.0.1/showproducts
-Route::get('showproducts', ShowProductaController::class);
+// http://127.0.0.1/product_types
+Route::get('/product_types/{productType?}', ShowProductaController::class);
 
 // use to ProductController
 // http://127.0.0.1/products
