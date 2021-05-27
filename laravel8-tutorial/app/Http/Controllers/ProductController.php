@@ -116,16 +116,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        DB::table('products')
-            ->where('id', $product->id)
-            ->update([
-                'name' => $request->input('name'),
-                'code' => $request->input('code'),
-                'description' => $request->input('description'),
-                'type_id' =>$request->input('type_id'),
-                'stock' => $request->input('stock'),
-                'price' => $request->input('price'),
-            ]);
+//        DB::table('products')
+//            ->where('id', $product->id)
+//            ->update([
+//                'name' => $request->input('name'),
+//                'code' => $request->input('code'),
+//                'description' => $request->input('description'),
+//                'type_id' =>$request->input('type_id'),
+//                'stock' => $request->input('stock'),
+//                'price' => $request->input('price'),
+//            ]);
+
+
+        $product->fill($request->input());
+        $product->save();
 
         return redirect()->route('products.index');
     }
