@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShowProductaController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,13 @@ Route::get('/test', function () {
 });
 
 // use to ShowProductaController
-// http://127.0.0.1/product_types
-Route::get('/product_types/{productType?}', ShowProductaController::class);
+// http://127.0.0.1/show
+Route::get('/show/{productType?}', ShowProductaController::class);
 
 // use to ProductController
 // http://127.0.0.1/products
 Route::resource('products', ProductController::class);
+
+// use to ProductTypeController
+// http://127.0.0.1/products_types
+Route::resource('product_types', ProductTypeController::class);
