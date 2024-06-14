@@ -43,3 +43,9 @@ Route::resource('products', ProductController::class);
 // use to ProductTypeController
 // http://127.0.0.1/products_types
 Route::resource('product_types', ProductTypeController::class);
+
+
+// If the storage link have trouble
+//Route::get('/storage', function() {
+//    \Illuminate\Support\Facades\Artisan::call('storage:link');
+//});
